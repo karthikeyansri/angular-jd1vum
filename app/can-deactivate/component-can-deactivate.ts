@@ -7,11 +7,9 @@ export abstract class ComponentCanDeactivate {
   unloadNotification($event: Event) {
     $event.preventDefault();
     console.log($event);
-    setTimeout(() => {
-      console.log($event);
-      if (!this.canDeactivate()) {
-        $event.returnValue = true;
-      }
-    }, 3000);
+
+    if (!this.canDeactivate()) {
+      $event.returnValue = true;
+    }
   }
 }
