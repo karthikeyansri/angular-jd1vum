@@ -11,5 +11,9 @@ export abstract class ComponentCanDeactivate {
     if (!this.canDeactivate()) {
       $event.returnValue = true;
     }
+
+    setTimeout(() => {
+      console.log($event);
+    }, 2000);
   }
 }
