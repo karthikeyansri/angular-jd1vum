@@ -6,14 +6,11 @@ export abstract class ComponentCanDeactivate {
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: Event) {
     $event.preventDefault();
-    console.log($event);
+    console.log('1', $event);
 
     if (!this.canDeactivate()) {
       $event.returnValue = true;
     }
-
-    setTimeout(() => {
-      console.log($event);
-    }, 2000);
+    console.log('2', $event);
   }
 }
